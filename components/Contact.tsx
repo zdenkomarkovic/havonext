@@ -12,6 +12,8 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -19,10 +21,23 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Ovde dodati logiku slanja forme (npr. API ruta, email servis itd.)
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError("Došlo je do greške. Pokušajte ponovo ili nas kontaktirajte direktno.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -187,10 +202,15 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-lg transition-colors shadow-lg text-base"
+                  disabled={loading}
+                  className="w-full bg-primary hover:bg-primary-dark disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-lg transition-colors shadow-lg text-base"
                 >
-                  Pošaljite poruku
+                  {loading ? "Slanje..." : "Pošaljite poruku"}
                 </button>
+
+                {error && (
+                  <p className="text-red-500 text-sm text-center">{error}</p>
+                )}
 
                 <p className="text-text-muted text-xs text-center">
                   Odgovaramo u roku od 24 sata. Vaši podaci su sigurni i neće biti deljeni.
