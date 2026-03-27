@@ -5,9 +5,9 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata = buildMetadata({
-  title: "Kontakt",
+  title: "Kontakt – Zatražite ponudu",
   description:
-    "Kontaktirajte HAVONEXT D.O.O. za organizaciju drumskog prevoza tereta. Odgovaramo u roku od 24 sata.",
+    "Kontaktirajte HAVONEXT D.O.O. za organizaciju drumskog prevoza tereta u Srbiji. Besplatna ponuda, odgovaramo u roku od 24 sata.",
   url: `${SITE_URL}/kontakt`,
 });
 

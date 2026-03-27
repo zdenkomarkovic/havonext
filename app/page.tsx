@@ -12,9 +12,9 @@ import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 
 export const metadata = buildMetadata({
-  title: "HAVONEXT D.O.O. – Organizacija drumskog saobraćaja",
+  title: "HAVONEXT D.O.O. – Organizacija drumskog saobraćaja u Srbiji",
   description:
-    "Organizacija drumskog prevoza tereta u Srbiji. Provereni prevoznici, praćenje pošiljaka i optimizacija troškova.",
+    "HAVONEXT D.O.O. – organizacija drumskog prevoza tereta u Srbiji. Provereni prevoznici, praćenje pošiljaka i optimizacija troškova. Zatražite besplatnu ponudu.",
 });
 
 export default function HomePage() {

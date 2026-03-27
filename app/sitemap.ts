@@ -7,15 +7,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: SITE_URL,
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: "monthly",
       priority: 1,
     },
-    // Primer za dinamicke stranice (blog, proizvodi):
-    // ...posts.map((post) => ({
-    //   url: `${SITE_URL}/blog/${post.slug}`,
-    //   lastModified: new Date(post.updatedAt),
-    //   changeFrequency: "weekly" as const,
-    //   priority: 0.8,
-    // })),
+    {
+      url: `${SITE_URL}/kontakt`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.8,
+    },
   ];
 }

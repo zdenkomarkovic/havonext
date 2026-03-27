@@ -2,10 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center bg-navy overflow-hidden"
-    >
+    <section id="hero" className="relative min-h-screen flex items-center bg-navy overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-full translate-x-1/2 -translate-y-1/4" />
@@ -13,7 +10,10 @@ export default function Hero() {
       </div>
 
       {/* Diagonal accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-white" style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }} />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-24 bg-white"
+        style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -23,12 +23,11 @@ export default function Hero() {
               Drumski saobraćaj
             </span>
             <h1 className="font-heading font-bold text-2xl sm:text-4xl lg:text-5xl text-white leading-tight mb-4">
-              <span className="text-primary">HAVONEXT</span> – vaš pouzdan{" "}
-              partner za transport
+              <span className="text-primary">HAVONEXT</span> – vaš pouzdan partner za transport
             </h1>
             <p className="text-white/75 text-sm sm:text-base leading-relaxed mb-6 max-w-lg">
-              Organizujemo drumski prevoz tereta širom Srbije. Brzina,
-              pouzdanost i transparentnost – sve na jednom mestu.
+              Organizujemo drumski prevoz tereta širom Srbije. Brzina, pouzdanost i transparentnost
+              – sve na jednom mestu.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
@@ -48,14 +47,12 @@ export default function Hero() {
             {/* Stats */}
             <div className="mt-8 grid grid-cols-3 gap-4 border-t border-white/20 pt-6">
               {[
-                { value: "500+", label: "Uspešnih isporuka" },
+                { value: "5000+", label: "Uspešnih isporuka" },
                 { value: "50+", label: "Proverenih prevoznika" },
                 { value: "24/7", label: "Podrška i praćenje" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="font-heading font-bold text-2xl text-primary">
-                    {stat.value}
-                  </p>
+                  <p className="font-heading font-bold text-2xl text-primary">{stat.value}</p>
                   <p className="text-white/60 text-xs mt-1">{stat.label}</p>
                 </div>
               ))}
